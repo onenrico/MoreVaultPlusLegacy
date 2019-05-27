@@ -1,0 +1,363 @@
+#=====-----=====-----=====-----[      GUI Configuration      ]-----=====-----=====-----=====#
+VaultMenu:
+  PrevPageItem:
+    Material: SIGN
+    Displayname: "&e▼ &f&lGo To Vault &b{prevvault}"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "       &e▼ &fPrevious Vault"
+    - ""
+    - "&8&m------------------------------"
+  NextPageItem:
+    Material: SIGN
+    Displayname: "&f&lGo To Vault &b{nextvault} &e▲"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "         &fNext Vault &e▲"
+    - ""
+    - "&8&m------------------------------"
+  PrevPageMaxItem:
+    Material: REDSTONE_BLOCK
+    Displayname: "&e<< &f&lNo Previous Vault "
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "    &c▼ &fPrev Vault Not Found"
+    - ""
+    - "&8&m------------------------------"
+  NextPageMaxItem:
+    Material: REDSTONE_BLOCK
+    Displayname: "&f&lNext Vault Is Locked &e>>"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "    &fNext Vault Is Locked &c▲"
+    - ""
+    - "&8&m------------------------------"
+  BalanceItem:
+    Material: PAPER
+    Displayname: "&f&lVault Bank &e>>"
+    Description:
+    - ""
+    - "             &f&lMoney"
+    - "        &7You Have: &b${money}"
+    - "   &8&l[{newmoneybar}&8&l] &8[&6${amount}&7/&f${max-amount}&8]"
+    - ""
+    - " &8▪ &9Left-Click▚ &7to deposit &6Money"
+    - " &8▪ &bRight-Click▞ &7to withdraw &6Money"
+    - ""
+  ExpItem:
+    Material: EYE_OF_ENDER
+    Displayname: "&f&lVault Exp &e>>"
+    Description:
+    - ""
+    - "              &f&lExp"
+    - "        &7You Have: &b{exp}"
+    - "   &8&l[{newexpbar}&8&l] &8[&6{exp-amount}&7/&f{max-exp-amount}&8]"
+    - ""
+    - " &8▪ &9Left-Click▚ &7to deposit &6Exp"
+    - " &8▪ &bRight-Click▞ &7to withdraw &6Exp"
+    - ""
+  SortItem:
+    Material: COMPASS
+    Displayname: "&f&lSort Vault &e>>"
+    Description:
+    - ""
+    - '  &7Sort Your Vault Items'
+    - ""
+    - "  &8▪ &6Click▖ &7to Sort Vault"
+    - ""
+  BorderItem:
+    Material: RAILS
+    Displayname: "&f&lGo Back &e>>"
+    Description:
+    - ""
+    - '  &7Go Back To Main Menu'
+    - ""
+    - "  &8▪ &6Click▖ &7to Go Back"
+    - ""
+  
+MainMenu:
+  Title: "&lVaults &8▚&1{page}&8/&1{maxpage}&8▞"
+  AvailableVault:
+    Displayname: "&f{name}"
+    Description:
+    - ""
+    - "             &f&lMoney"
+    - "        &7You Have: &b${money}"
+    - "   &8&l[{newmoneybar}&8&l] &8[&6${amount}&7/&f${max-amount}&8]"
+    - ""
+    - "              &f&lExp"
+    - "        &7You Have: &b{exp}"
+    - "   &8&l[{newexpbar}&8&l] &8[&6{exp-amount}&7/&f{max-exp-amount}&8]"
+    - ""
+    - "             &f&lSpace"
+    - "        &7Stack Size: &b{stack}"
+    - "   &8&l[{newspacebar}&8&l] &8[&6{used-space}&7/&f{max-space}&8 &7Slot&8]"
+    - "   &8&l[{newtotalbar}&8&l] &8[&6{used-total}&7/&f{total-space}&8 &7Items&8]"
+    - ""
+    - " &8▪ &9Left-Click▚ &7to Open &6Vault"
+    - " &8▪ &bRight-Click▞ &7to Manage &6Vault"
+    - ""
+    Material: MINECART
+  LockedVault:
+    Material: MINECART
+    Displayname: '  &c&lLocked Vault'
+    Description:
+    - ""
+    - "  &7Cost: &b${cost}"
+    - ""
+    - "  &8▪ &cLocked {not} "
+    - "  &8▪ &6Click▖ &7to Unlock &6Vault"
+    - ""
+  BorderItem:
+    Material: RAILS
+    Displayname: "&r"
+    Description:
+    - ""
+  PrevPageItem:
+    Material: SIGN
+    Displayname: "&e▼ &f&lGo To Page &b{prevpage}"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "       &e▼ &fPrevious Page"
+    - ""
+    - "&8&m------------------------------"
+  NextPageItem:
+    Material: SIGN
+    Displayname: "&f&lGo To Page &b{nextpage} &e▲"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "         &fNext Page &e▲"
+    - ""
+    - "&8&m------------------------------"
+
+IconMenu:
+  Title: "&lChoose Icon"
+  PrevPageItem:
+    Material: SIGN
+    Displayname: "&e▼ &f&lGo To Page &b{prevpage}"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "       &e▼ &fPrevious Page"
+    - ""
+    - "&8&m------------------------------"
+  NextPageItem:
+    Material: SIGN
+    Displayname: "&f&lGo To Page &b{nextpage} &e▲"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "         &fNext Page &e▲"
+    - ""
+    - "&8&m------------------------------"
+  IconItem:
+    Material: STONE
+    Displayname: "&6&l{material}"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &7Cost: &b${cost}"
+    - ""
+    - "  &8▪ &6Click▖ &7to Select"
+    - ""
+    - "&8&m------------------------------"
+  CancelItem:
+    Material: BARRIER
+    Displayname: "&c&lBack !"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7to Go Back"
+    - ""
+    - "&8&m------------------------------"
+
+ManageMenu:
+  Title: "&lManage Vault"
+  IconItem:
+    Material: STONE
+    Displayname: "&6&lChange Icon"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7to Choose Icon"
+    - ""
+    - "&8&m------------------------------"
+  RenameItem:
+    Material: PAPER
+    Displayname: "&6&lChange Name"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7to Rename Vault"
+    - ""
+    - "&8&m------------------------------"
+  DescriptionItem:
+    Material: BOOK
+    Displayname: "&6&lCurrent Description"
+    Description:
+    - "&8&m------------------------------"
+    - "&r{description}"
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7to Change Description"
+  DeviceItem:
+    Material: REDSTONE
+    Displayname: "&6&lGet Device"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &7Cost: &b${cost}"
+    - ""
+    - "  &8▪ &6Click▖ &7to Get Device"
+    - ""
+    - "&8&m------------------------------"
+  LinkItem:
+    Material: DIAMOND
+    Displayname: "&a&lLink !"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &7Cost: &b${linkcost}"
+    - ""
+    - "  &8▪ &6Click▖ &7to Link this vault"
+    - ""
+    - "&8&m------------------------------"
+  UnlinkItem:
+    Material: COAL
+    Displayname: "&c&lUnlink !"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7to Unlink this vault"
+    - ""
+    - "&8&m------------------------------"
+  OnAutoSellItem:
+    Material: RED_ROSE
+    Displayname: "&f&lAuto Sell &8[&cOFF&8]"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7to Turn &aON"
+    - ""
+    - "&8&m------------------------------"
+  OffAutoSellItem:
+    Material: SUNFLOWER
+    Displayname: "&f&lAuto Sell &8[&aON&8]"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7to Turn &cOFF"
+    - ""
+    - "&8&m------------------------------"
+  CancelItem:
+    Material: BARRIER
+    Displayname: "&c&lBack !"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7to Go Back"
+    - ""
+    - "&8&m------------------------------"
+
+EditDescriptionMenu:
+  Title: "Edit &8[&1{page}&8/&1{maxpage}&8]"
+  PrevPageItem:
+    Material: SIGN
+    Displayname: "&e▼ &f&lGo To Page &b{prevpage}"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "       &e▼ &fPrevious Page"
+    - ""
+    - "&8&m------------------------------"
+  NextPageItem:
+    Material: SIGN
+    Displayname: "&f&lGo To Page &b{nextpage} &e▲"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "         &fNext Page &e▲"
+    - ""
+    - "&8&m------------------------------"
+  AddLoreItem:
+    Material: ANVIL
+    Displayname: "&f&lAdd Line"
+    Description:
+    - "&8&m------------------------------"
+    - "&r{description}"
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7add Line"
+  LoreItem:
+    Material: STORAGE_MINECART
+    Displayname: "&f&lLine &8[&a{line}&8]"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "&e'&r{content}&e'"
+    - " "
+    - " &8▪ &9Left-Click▚ &7to Edit &6Line"
+    - " &8▪ &bRight-Click▞ &7to Move &6Line"
+    - " &8▪ &aMiddle-Click▞ &7to Add Empty &6Line"
+    - " "
+    - " &8▪ &6Shift-&bRight-Click▞ &7to &cRemove &6Line"
+    - ""
+    - "&8&m------------------------------"
+MoveDescriptionMenu:
+  Title: "Move &8[&1{page}&8/&1{maxpage}&8]"
+  PrevPageItem:
+    Material: SIGN
+    Displayname: "&e▼ &f&lGo To Page &b{prevpage}"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "       &e▼ &fPrevious Page"
+    - ""
+    - "&8&m------------------------------"
+  NextPageItem:
+    Material: SIGN
+    Displayname: "&f&lGo To Page &b{nextpage} &e▲"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "         &fNext Page &e▲"
+    - ""
+    - "&8&m------------------------------"
+  CurrentPosition:
+    Material: STORAGE_MINECART
+    Displayname: "&f&lCurrent Line &8[&a{line}&8]"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "&e'&r{content}&e'"
+    - " "
+    - " &8▪ &7This is current line"
+    - ""
+    - "&8&m------------------------------"
+  ReplacePosition:
+    Material: MINECART
+    Displayname: "&f&lLine &8[&a{line}&8]"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "&e'&8{content}&e'"
+    - " "
+    - " &8▪ &9Left-Click▚ &7to Move &6Line"
+    - " &8▪ &bRight-Click▞ &7to Swap &6Line"
+    - ""
+    - "&8&m------------------------------"
+  CancelItem:
+    Material: BARRIER
+    Displayname: "&c&lBack !"
+    Description:
+    - "&8&m------------------------------"
+    - ""
+    - "  &8▪ &6Click▖ &7to Go Back"
+    - ""
+    - "&8&m------------------------------"

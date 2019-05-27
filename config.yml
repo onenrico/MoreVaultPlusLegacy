@@ -1,0 +1,378 @@
+#  ▒█▀▄▀█ █▀▀█ █▀▀█ █▀▀ 　
+#  ▒█▒█▒█ █░░█ █▄▄▀ █▀▀ 　
+#  ▒█░░▒█ ▀▀▀▀ ▀░▀▀ ▀▀▀ 　
+#
+#  ▒█░░▒█ █▀▀█ █░░█ █░░ ▀▀█▀▀ 　
+#  ░▒█▒█░ █▄▄█ █░░█ █░░ ░░█░░ 　
+#  ░░▀▄▀░ ▀░░▀ ░▀▀▀ ▀▀▀ ░░▀░░ 　
+
+# =====-----=====-----=====-----[      More Vault + Configuration      ]-----=====-----=====-----=====#
+# Please note: This plugin may contains bug that i'm not realize if there was a bug
+# that was your job to find one and report that to me on my spigot page
+
+# Check out this link to see available Material for item
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# Note: This Material list is For the latest release of Spigot version
+# so some material maybe not work in older version [Example: BONE_BLOCK only work for 1.11]
+
+pluginPrefix: "&8&l▎ &bN&beo&6Vault &8&l▎ &7"
+locales: EN
+
+# MErry christmas (give santa hat when player opening vault)
+christmas: false
+
+# should vault slot change based on their current permission
+force-update-slot: false
+
+minimal-price-format: false
+# true means 1000 going to show 1K
+# false means 1000 going to show 1.000
+
+vault-sort: true
+# should enable feature vault sorting
+
+load_message: true
+# message when vault success loaded
+
+world-permission: false
+# should use per world permission 
+# permission: morevaultplus.open.<world>
+
+default-name: '            &r&8&l[&b Vault &3{id} &8&l]'
+# default name of the vault
+# {id} would be replaced by the vault ID
+
+numbered-vault-item: true
+# should vault item amount in gui different
+
+uncolor-vault-title: false
+# should vault gui title uncolorred
+
+ender-open-vault: false
+# should right click on enderchest open vault menu
+
+vault-navigation: true
+# should vault navigation enabled
+
+vault-link: true
+# should vault link feature enabled
+
+vault-autosell: true
+# should vault link feature enabled
+
+vault-link-particle: true
+# should vault link item pickup has particle
+
+vault-autoback: true
+# should vault menu back to main menu after closing
+
+prefix-hover-page: true
+# should plugin prefix hover display spigot page
+
+command-aliases: "pv"
+#aliases to open command /morevault vault
+
+default-icon: "STORAGE_MINECART"
+# You can use ID:Data Too
+
+default-space: 45
+# Default space of vault 
+# If you want to import morevault then set this to last vault [row * 9] 5 * 9 = 45
+
+unlock-use: "BALANCE"
+# BALANCE or PLAYERPOINT
+# Default is BALANCE (Money)
+# You need to install PlayerPoint plugin to use PLAYERPOINT as unlock-cost
+
+sign-enabled: true
+# should vault sign enabled or not
+# default is true 
+# you can set it to false
+
+sign-title: "&1[Vault]"
+# first line of vault sign
+# to make sign place sign and write [mvp] on first line
+
+close-on-move: true
+# close inventory if player move(prevent dupe)
+
+device-enabled: true
+# should vault device enabled or not
+# default is true 
+# you can set it to false
+
+cancel-word: "cancel"
+# cancel word for change name,description etc
+
+deposit-enabled: true
+# should player can deposit balance in their vault
+
+deposit-exp-enabled: true
+# should player can deposit exp in their vault
+
+no-bottom: true
+# should last row of vault filled by border
+
+vault-device:
+  material: CHEST
+  displayname: "&7▎ &6Vault &7Device &7▎"
+  lore: 
+  - ""
+  - "       &eVault Owner&f&l: &e{owner}"
+  - "        &eVault ID&f&l   : &e{id}"
+  - ""
+  - "  &8▎ &bRight-Click▞ &7to open &6Vault &8▎" 
+  - ""
+# this is vault device item configuration
+# used for open vault remotely
+
+# Player can only take item from vault
+only-take: false
+
+# Vault only open nearby
+open-nearby-radius: 3
+open-nearby: []
+
+# Vault forbidden to open nearby
+forbid-nearby-radius: 1
+forbid-nearby:
+
+
+# Please order custom-permission from higher priority
+# You can make as many custom as you want !
+# And always put default on bottom
+custom-permission:
+  mvp:
+    permission: "morevault.vault.somuch"
+    # Permission to type very very custom
+    max-deposit: 100000
+    # Max deposit money on the vault
+    max-exp-deposit: 50000
+    # Max deposit exp on the vault
+    min-vault: 15
+    # Unlocked Vault by default
+    max-vault: 20
+    # Max Vault can be unlocked
+    increasing-cost: false
+    # Should vault price increase
+    increase-amount: "1000"
+    # amount of increased price per vault
+    # you can use "3.5x" or "<multiplier>x"
+    # to multiply vault increase cost
+    unlock-cost: 5000
+    # Cost To Unlock the Locked Vault
+    # if increase-cost is true and increase-amount is 1000 and unlock-cost is 5000
+    # then vault 10 will cost 14000, vault 1 will cost 5000, vault 2 will cost 6000 and so on
+    device-cost: 1000
+    # Cost To Unlock the Get Vault Device
+    link-cost: 1000
+    # Cost To Link the Vault
+    space: 54
+    # Space of the vault
+    change-name: true
+    # Should player able to change vault name
+    change-icon: true
+    # Should player able to change vault icon
+    change-description: true
+    # Should player able to change vault description
+    stack-size: 64
+    # max stack size on vault highest value is 64
+    item-blacklist:
+    - "BEDROCK"
+    - "BARRIER"
+    # Item that prevented from being stored
+    # You can use ID too , ID:DATA & MATERIAL:DATA supported
+  vvip:
+    permission: "morevault.vault.vvip"
+    max-deposit: 50000
+    max-exp-deposit: 10000
+    min-vault: 10
+    max-vault: 15
+    increasing-cost: false
+    increase-amount: "1000"
+    unlock-cost: 15000
+    device-cost: 1000
+    link-cost: 1000
+    space: 45
+    change-name: true
+    change-icon: true
+    change-description: true
+    stack-size: 64
+    item-blacklist:
+    - "BEDROCK"
+    - "BARRIER"
+  vip:
+    permission: "vip.cool.vault"
+    max-deposit: 25000
+    max-exp-deposit: 10000
+    min-vault: 5
+    max-vault: 10
+    increasing-cost: false
+    increase-amount: "1000"
+    unlock-cost: 25000
+    device-cost: 1000
+    link-cost: 1000
+    space: 36
+    change-name: true
+    change-icon: false
+    change-description: true
+    stack-size: 64
+    item-blacklist:
+    - "BEDROCK"
+    - "BARRIER"
+  default:
+    permission: ""
+    max-deposit: 15000
+    max-exp-deposit: 5000
+    min-vault: 3
+    max-vault: 5
+    increasing-cost: true
+    increase-amount: "2x"
+    unlock-cost: 50000
+    device-cost: 1000
+    link-cost: 1000
+    space: 27
+    change-name: false
+    change-description: false
+    change-icon: false
+    stack-size: 50
+    item-blacklist:
+    - "BEDROCK"
+    - "BARRIER"
+
+# format [material]>[price]
+# check out minecraft item ID on google 
+custom-icon:
+- STAINED_GLASS_PANE:14>500
+- STAINED_GLASS:6>500
+- WOOL:7>500
+- SAPLING:5>1000
+- STAINED_GLASS_PANE:6>500
+- ENCHANTMENT_TABLE>6000
+- STAINED_GLASS:14>500
+- COOKIE>1000
+- WOOL:15>500
+- CAKE>1500
+- INK_SACK:1>500
+- IRON_LEGGINGS>2500
+- INK_SACK:10>500
+- EMPTY_MAP>2000
+- PUMPKIN>1500
+- IRON_INGOT>1500
+- WOOL>500
+- ITEM_FRAME>2000
+- DIAMOND_SWORD>2000
+- STAINED_GLASS_PANE:15>500
+- STAINED_GLASS:5>500
+- WOOL:8>500
+- STAINED_GLASS_PANE:7>500
+- INK_SACK>500
+- STAINED_GLASS:13>500
+- DIAMOND_CHESTPLATE>2500
+- MAGMA_CREAM>2000
+- BANNER>2500
+- INK_SACK:9>500
+- LAVA_BUCKET>4000
+- BOOK_AND_QUILL>1500
+- STAINED_GLASS_PANE:12>500
+- ANVIL>2000
+- STAINED_GLASS:8>500
+- DIAMOND_AXE>2000
+- MELON_BLOCK>1500
+- RAW_FISH:1>1000
+- WOOL:9>500
+- STAINED_GLASS_PANE:4>500
+- IRON_HELMET>2500
+- BONE>1500
+- INK_SACK:3>500
+- INK_SACK:4>500
+- INK_SACK:12>500
+- COAL>900
+- WRITTEN_BOOK>2500
+- CACTUS>1500
+- WOOL:2>500
+- STAINED_GLASS_PANE:13>500
+- STAINED_GLASS:7>500
+- ENDER_PEARL>1000
+- RAW_FISH>1000
+- CHEST>2500
+- WOOL:10>500
+- STAINED_GLASS_PANE:5>500
+- SAPLING>1000
+- INK_SACK:2>500
+- STAINED_GLASS:15>500
+- DIAMOND_BARDING>2000
+- INK_SACK:11>500
+- TNT>2500
+- IRON_BOOTS>2500
+- BUCKET>2000
+- EXP_BOTTLE>5000
+- GOLD_INGOT>1500
+- WEB>1500
+- EMERALD>3000
+- STAINED_GLASS:10>500
+- DIAMOND_SPADE>2000
+- WOOL:3>500
+- BARRIER>10000
+- WOOL:11>500
+- SAPLING:1>1000
+- RAW_FISH:3>1000
+- STAINED_GLASS_PANE:10>500
+- BLAZE_POWDER>2000
+- NETHER_STAR>5000
+- INK_SACK:6>500
+- DIAMOND_LEGGINGS>2500
+- LEATHER>1000
+- QUARTZ_BLOCK>1500
+- STAINED_GLASS_PANE:1>500
+- INK_SACK:14>500
+- BOW>2000
+- STAINED_GLASS:1>500
+- WATER_BUCKET>3000
+- STAINED_GLASS_PANE:11>500
+- STAINED_GLASS:9>500
+- WOOL:4>500
+- PAPER>500
+- STAINED_GLASS_PANE:3>500
+- SAPLING:2>1000
+- GOLD_BARDING>2000
+- WOOL:12>500
+- RAW_FISH:2>1000
+- REDSTONE>2000
+- INK_SACK:5>500
+- IRON_CHESTPLATE>2500
+- STAINED_GLASS_PANE:2>500
+- STAINED_GLASS>500
+- INK_SACK:13>500
+- DIAMOND>2500
+- SIGN>2000
+- WOOL:5>500
+- BOOK>1000
+- STAINED_GLASS:4>500
+- ENDER_CHEST>3000
+- SAPLING:3>1000
+- IRON_BARDING>2000
+- SHEARS>1500
+- WOOL:13>500
+- STAINED_GLASS_PANE:8>500
+- STAINED_GLASS:12>500
+- LEASH>2000
+- SNOW_BALL>1000
+- FIREWORK>1500
+- INK_SACK:8>500
+- DIAMOND_HELMET>2500
+- STAINED_GLASS:3>500
+- LONG_GRASS>10000
+- DIAMOND_PICKAXE>2000
+- STAINED_GLASS:11>500
+- WOOL:6>500
+- SAPLING:4>1000
+- WOOL:14>500
+- STAINED_GLASS_PANE:9>500
+- INK_SACK:7>500
+- STAINED_GLASS_PANE>500
+- DIAMOND_BOOTS>2500
+- STAINED_GLASS:2>500
+- ARROW>2000
+- INK_SACK:15>500
+- SADDLE>2000

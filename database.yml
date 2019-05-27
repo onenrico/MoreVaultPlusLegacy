@@ -1,0 +1,9 @@
+# Type Available : mysql or sqlite or yml
+
+database:
+  type: 'sqlite'
+  hostname: 'unknown'
+  port: '3306'
+  database: 'database'
+  user: 'user'
+  password: 'password'

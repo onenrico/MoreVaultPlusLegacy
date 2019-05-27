@@ -1,0 +1,532 @@
+#=====-----=====-----=====-----[      Messages Configuration      ]-----=====-----=====-----=====#
+#
+# Option List:
+# <center> : Center The Message on that line
+# <np> : Disable prefix on that line
+# <title> : send title to player
+# <subtitle> : send subtitle to player
+# <action> : send actionbar to player
+# <sound> : send sound to player
+# use <title>Text<subtitle>text : to send title and subtitle at same time
+# 
+# Custom Placeholder Can be Used for Text Line hologram too
+# Use curly bracket { } to use placeholder in Text Line
+# Example: {heart} will be replace by defined placeholder
+# Don't forget to encode as UTF-8 
+# Below is pre-made plaeholder , you can make as many as you want XD
+
+custom-placeholder:
+  newmoneybar: "<bar>bars=15<>value={moneyinside}<>maxvalue={maxmoney}<>symbol=○<>fill=&6<>empty=&f</bar>"
+  newexpbar: "<bar>bars=15<>value={expinside}<>maxvalue={maxexp}<>symbol=●<>fill=&6<>empty=&f</bar>"
+  newspacebar: "<bar>bars=15<>value={used}<>maxvalue={space}<>symbol=▧<>fill=&6<>empty=&f</bar>"
+  newtotalbar: "<bar>bars=15<>value={total}<>maxvalue={space64}<>symbol=▩<>fill=&6<>empty=&f</bar>"
+  doneline: "&f&m+---------------------------------------------------+"
+  errline: "&8&m+---------------------------------------------------+"
+  plusline: "&7&m+---------------------------------------------------+"
+  done: "&8&l[&f✔&8&l]"
+  not: "&8&l[&c✘&8&l]"
+  edit: "&8&l[&f✎&8&l]"
+  peace: "✌"
+  heart: "❤"
+  cloud: "☁"
+  poison: "☠"
+  star: "★"
+  x: "█"
+  x/: "▌"
+  x\: "▐"
+  rarrow: "►"
+  larrow: "◀"
+  diamond: "◇"
+  melody: "♫"
+  crown: "♚"
+  plane: "✈"
+  snowman: "☃"
+  snow: "❆"
+  sword: "⚔"
+  health: "✚"
+  checklist: "✔"
+  cross: "✘"
+  copyright: "©"
+  tm: "™"
+  empty: ""
+ 
+random-placeholder:
+  red:
+  - "&c"
+  - "&4"
+  green:
+  - "&a"
+  - "&2"
+  blue:
+  - "&b"
+  - "&3"
+  white:
+  - "&f"
+  - "&7"
+  yellow:
+  - "&e"
+  - "&6"
+
+messages:
+  gui_click:
+  - "<sound>BLOCK_PISTON_EXTEND"
+  main_menu_open:
+  - "<sound>BLOCK_CHEST_OPEN"
+  vault_open:
+  - "<sound>BLOCK_CHEST_OPEN"
+  device_get:
+  - "<title>&bDevice Retrieved &8&l[&f{id}&8&l]<subtitle>&7Enjoy {done}"
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&fSuccessfully Get Device of &fVault ID #&f{id} {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_deposited_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&fSuccessfully Deposit to &bVault {id} {edit}"
+  - "<np><center>&b+&f{exp} {edit}"
+  - "<np>"
+  - "<np><center>&bCurrent Vault Exp: &f{amount} {done}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_withdrawed_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&fSuccessfully Withdraw from &bVault {id} {edit}"
+  - "<np><center>&c-&f{exp} {edit}"
+  - "<np>"
+  - "<np><center>&bCurrent Vault Exp: &f{amount} {done}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_deposit_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&bMax Vault Exp&f: &f{max-exp-amount}"
+  - "<np>"
+  - "<np><center>&fVault Exp&f: &f{amount}"
+  - "<np><center>&fYour Exp&f: &f{exp}"
+  - "<np>"
+  - "<np><center>&7Type &c{cancel} &7to cancel &fDeposit Vault"
+  - "<np><center>&7Please Type Number For The &fDeposit Amount {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  exp_withdraw_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&bMax Vault Exp&f: &f{max-exp-amount}"
+  - "<np>"
+  - "<np><center>&fVault Exp&f: &f{amount}"
+  - "<np><center>&fYour Exp&f: &f{exp}"
+  - "<np>"
+  - "<np><center>&7Type &c{cancel} &7to cancel &fWithdraw Vault"
+  - "<np><center>&7Please Type Number For The &fWithdraw Amount {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  exp_deposit_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cSuccessfully Canceled {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_withdraw_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cSuccessfully Canceled {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_deposit_exceed:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou're deposit too much exp {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  exp_deposit_notenough:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou don't have enough exp to deposit {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  exp_withdraw_notenough:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYour vault don't have enough exp to withdraw {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  deposited_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&fSuccessfully Deposit to &bVault {id} {edit}"
+  - "<np><center>&b+&f$&f{money} {edit}"
+  - "<np>"
+  - "<np><center>&bCurrent Vault Balance: &b$&f{amount} {done}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  withdrawed_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&fSuccessfully Withdraw from &bVault {id} {edit}"
+  - "<np><center>&c-&f$&f{money} {edit}"
+  - "<np>"
+  - "<np><center>&bCurrent Vault Balance: &b$&f{amount} {done}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  deposit_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&bMax Vault Money&f: &b$&f{max-amount}"
+  - "<np>"
+  - "<np><center>&fVault Money&f: &b$&f{amount}"
+  - "<np><center>&fYour Money&f: &b$&f{money}"
+  - "<np>"
+  - "<np><center>&7Type &c{cancel} &7to cancel &fDeposit Vault"
+  - "<np><center>&7Please Type Number For The &fDeposit Amount {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  withdraw_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&bMax Vault Money&f: &b$&f{max-amount}"
+  - "<np>"
+  - "<np><center>&fVault Money&f: &b$&f{amount}"
+  - "<np><center>&fYour Money&f: &b$&f{money}"
+  - "<np>"
+  - "<np><center>&7Type &c{cancel} &7to cancel &fWithdraw Vault"
+  - "<np><center>&7Please Type Number For The &fWithdraw Amount {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  deposit_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cSuccessfully Canceled {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  withdraw_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cSuccessfully Canceled {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  deposit_exceed:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou're deposit too much money {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  deposit_notenough:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou don't have enough money to deposit {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  withdraw_notenough:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYour vault don't have enough money to withdraw {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  rename_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<center>&fSuccessfully Rename &bVault {id} {edit}"
+  - "<np>"
+  - "<np><center>&8[&r{name}&8]"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  renaming_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&7Type &c{cancel} &7to cancel &fRenaming Vault"
+  - "<np><center>&7Please Type Anything For The &fVault Name {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  rename_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cSuccessfully Canceled {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  success_unlock:
+  - "<title>&bVault Unlocked &8&l[&f{id}&8&l]<subtitle>&7Congratulation {done}"
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&fSuccessfully Unlock &fVault ID #&f{id} {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  disorder_unlock:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou Must Unlock Vault In Order {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  insufficient_money:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou need ${money} money to do this !  {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  no_permission:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou Don't Have Permission &8[&f{perm}&8] &cTo Use This {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  not_permitted:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou Can't Do That To This &bVault {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  config_reload:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&bSuccessfully Reload The Config {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  edit_icon:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&fSuccessfully Edit &bIcon &fto &8[&r{icon}&8] {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  no_target:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cTarget &8[&r{target}&8] &cNot Found !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  no_owner:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cOwner &8[&r{target}&8] &cNot Online !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  not_available:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou Can't Open Vault &f#&f{id} &c!! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  success_load:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&bYour Vault Successfuly Loaded !! {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  please_wait:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cPlease Wait Vault Data Still Loading !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  item-blacklisted:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou Cannot Put That Item To Vault !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  
+  open-place:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cPlease don't open vault in nearby stairs, trapdoor, carpet and lilypad !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  
+  worldguard-open:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cYou cannot open vault inside this region !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  must_number:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cInput Must Be A Number !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  
+  vault_given:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&b{target} &freceived {amount} of &fVault {done}"
+  - "<center><np>&b{target} &fcurrently have {current} &fVaults {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_set:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center><np>&b{target} &fvault amount set to {current} &fVaults {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_purified:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&b{target} &fvault [name,icon,description] has been Purified {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  vault_linked:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center><np>&fInventory Linked to Vault &b#{id} {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_unlinked:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center><np>&fInventory Unlinked from Vault &b#{id} {done}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_autosell_on:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center><np>&fVault &b#{id} Auto Sell Turned &aON {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_autosell_off:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center><np>&fVault &b#{id} Auto Sell Turned &cOFF {done}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  
+  edited_line:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<center>&fSuccessfully edit &bLine {line} &ffrom &bVault {id} {edit}"
+  - "<np>"
+  - "<np><center>&8[&r{content}&8]"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  edit_line:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&7Type &c{cancel} &7to cancel &fEdit Line"
+  - "<np><center>&7Please Type Anything For The &fLine {line} {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  edit_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cSuccessfully Canceled {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  move_line:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<center>&fSuccessfully move &bLine {cline} &fto &bLine {line} {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  swap_line:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<center>&fSuccessfully swap &bLine {cline} &fand &bLine {line} {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  remove_line:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&fSuccessfully removed &bLine {line} {edit}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  inventory-notloaded:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&fCannot open this vault, Maybe because it is 1.13 vault ? {edit}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  help_header:
+  - "<np>&8&l[&7&m-----&8&m===&6&m--&8&m===&f&l[ {prefix} &f&l]&8&m===&6&m--&8&m===&7&m-----&8&l]"
+  help_message:
+  - "<np>&b/mvp vault <hover:&fOpen Vault Menu"
+  - "<np>&b/mvp vault &7[&aPlayer&7] <hover:&fOpen other vault"
+  - "<np>&b/mvp vault &7[&aPlayer&7] &7[&aID&7] <hover:&fOpen other vault"
+  - "<np>&b/mvp give &7[&aPlayer&7] &7[&aamount&7] <hover:&fGive vault to player"
+  - "<np>&b/mvp set &7[&aPlayer&7] &7[&aamount&7] <hover:&fSet owned vault of player"
+  - "<np>&b/mvp convert &7[&aType&7] <hover:&fConvert Database [Type: SQLite,MySQL,YML]"
+  - "<np>&b/mvp purify &7[&aPlayer&7] <hover:&fpurify player vaults to reset its title and icon"
+  - "<np>&b/mvp purifyall <hover:&fpurify all player vaults to reset its title and icon"
+  - "<np>&b/mvp reload <hover:&freload the plugin"
+  help_decoration:
+  - "<title>{nojsonprefix}<subtitle>&7showing help page {page}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  help_footer:
+  - "<np>&8&l[&7&m-----&8&m===&6&m---&8&m=&f&l[ &eHelp Page {page} / {maxpage} &f&l]&8&m=&6&m---&8&m===&7&m-----&8&l]"
+  help_next:
+  - "<np><json>&e/mvp help &a{nextpage}@CR:/mvp help {nextpage}@H:&7Click to go to next page</json> &7- to see next page"
+  help_prev:
+  - "<np><json>&e/mvp help &a{prevpage}@CR:/mvp help {prevpage}@H:&7Click to go to prev page</json> &7- to see prev page"
+  unknown_command:
+  - "<subtitle>&e&lPlease see how to use this command"
+  auto_sell:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<np><center>&b&lAuto Sell {plane}"
+  - "<np><center>&6Total: &f${total}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  

@@ -1,0 +1,532 @@
+#=====-----=====-----=====-----[      Messages Configuration      ]-----=====-----=====-----=====#
+#
+# Option List:
+# <center> : Center The Message on that line
+# <np> : Disable prefix on that line
+# <title> : send title to player
+# <subtitle> : send subtitle to player
+# <action> : send actionbar to player
+# <sound> : send sound to player
+# use <title>Text<subtitle>text : to send title and subtitle at same time
+# 
+# Custom Placeholder Can be Used for Text Line hologram too
+# Use curly bracket { } to use placeholder in Text Line
+# Example: {heart} will be replace by defined placeholder
+# Don't forget to encode as UTF-8 
+# Below is pre-made plaeholder , you can make as many as you want XD
+
+custom-placeholder:
+  newmoneybar: "<bar>bars=15<>value={moneyinside}<>maxvalue={maxmoney}<>symbol=○<>fill=&6<>empty=&f</bar>"
+  newexpbar: "<bar>bars=15<>value={expinside}<>maxvalue={maxexp}<>symbol=●<>fill=&6<>empty=&f</bar>"
+  newspacebar: "<bar>bars=15<>value={used}<>maxvalue={space}<>symbol=▧<>fill=&6<>empty=&f</bar>"
+  newtotalbar: "<bar>bars=15<>value={total}<>maxvalue={space64}<>symbol=▩<>fill=&6<>empty=&f</bar>"
+  doneline: "&f&m+---------------------------------------------------+"
+  errline: "&8&m+---------------------------------------------------+"
+  plusline: "&7&m+---------------------------------------------------+"
+  done: "&8&l[&f✔&8&l]"
+  not: "&8&l[&c✘&8&l]"
+  edit: "&8&l[&f✎&8&l]"
+  peace: "✌"
+  heart: "❤"
+  cloud: "☁"
+  poison: "☠"
+  star: "★"
+  x: "█"
+  x/: "▌"
+  x\: "▐"
+  rarrow: "►"
+  larrow: "◀"
+  diamond: "◇"
+  melody: "♫"
+  crown: "♚"
+  plane: "✈"
+  snowman: "☃"
+  snow: "❆"
+  sword: "⚔"
+  health: "✚"
+  checklist: "✔"
+  cross: "✘"
+  copyright: "©"
+  tm: "™"
+  empty: ""
+ 
+random-placeholder:
+  red:
+  - "&c"
+  - "&4"
+  green:
+  - "&a"
+  - "&2"
+  blue:
+  - "&b"
+  - "&3"
+  white:
+  - "&f"
+  - "&7"
+  yellow:
+  - "&e"
+  - "&6"
+
+messages:
+  gui_click:
+  - "<sound>BLOCK_PISTON_EXTEND"
+  main_menu_open:
+  - "<sound>BLOCK_CHEST_OPEN"
+  vault_open:
+  - "<sound>BLOCK_CHEST_OPEN"
+  device_get:
+  - "<title>&bDispositivo recuperado &8&l[&f{id}&8&l]<subtitle>&7Disfrutar {done}"
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&fObtener correctamente el dispositivo de &fID de Bóveda #&f{id} {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_deposited_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&fDeposito exitoso para &bbóveda {id} {edit}"
+  - "<np><center>&b+&f{exp} {edit}"
+  - "<np>"
+  - "<np><center>&bExp Actual bóveda: &f{amount} {done}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_withdrawed_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&fRetirado exitosamente de &bbóveda {id} {edit}"
+  - "<np><center>&c-&f{exp} {edit}"
+  - "<np>"
+  - "<np><center>&bExp Actual de bóveda: &f{amount} {done}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_deposit_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&bExp máxima de bóveda&f: &f{max-exp-amount}"
+  - "<np>"
+  - "<np><center>&fExp de bóveda&f: &f{amount}"
+  - "<np><center>&fTu Exp&f: &f{exp}"
+  - "<np>"
+  - "<np><center>&7Escribe &c{cancel} &7para cancelar el &fdeposito de bóveda"
+  - "<np><center>&7Por favor escriba el número para el &fmonto del depósito {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  exp_withdraw_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&bExp máxima de bóveda&f: &f{max-exp-amount}"
+  - "<np>"
+  - "<np><center>&fExp de bóveda&f: &f{amount}"
+  - "<np><center>&fTu exp&f: &f{exp}"
+  - "<np>"
+  - "<np><center>&7Escribe &c{cancel} &7para cancelar la &fretiro de bóveda"
+  - "<np><center>&7Por favor escriba el &fnúmero para el monto de retiro {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  exp_deposit_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cCancelado exitosamente {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_withdraw_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cCancelado exitosamente {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  exp_deposit_exceed:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cEstas depositando demasiada exp {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  exp_deposit_notenough:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cNo tienes suficiente exp para depositar. {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  exp_withdraw_notenough:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cTu bóveda no tiene suficiente exp para retirar {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  deposited_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&fDeposito exitoso para &bbóveda {id} {edit}"
+  - "<np><center>&b+&f$&f{money} {edit}"
+  - "<np>"
+  - "<np><center>&bBalance Actual de Bóveda: &b$&f{amount} {done}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  withdrawed_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&fRetirada exitosamente de &bbóveda {id} {edit}"
+  - "<np><center>&c-&f$&f{money} {edit}"
+  - "<np>"
+  - "<np><center>&bBalance Actual de Bóveda: &b$&f{amount} {done}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  deposit_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&bDinero Máximo de bóveda&f: &b$&f{max-amount}"
+  - "<np>"
+  - "<np><center>&fDinero de bóveda&f: &b$&f{amount}"
+  - "<np><center>&fTu dinero&f: &b$&f{money}"
+  - "<np>"
+  - "<np><center>&7Escribe &c{cancel} &7para cancelar el &fdeposito en bóveda"
+  - "<np><center>&7Por favor escriba el número para el &fmonto del depósito {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  withdraw_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&bDinero Máximo de bóveda&f: &b$&f{max-amount}"
+  - "<np>"
+  - "<np><center>&fDinero de bóveda&f: &b$&f{amount}"
+  - "<np><center>&fTu dinero&f: &b$&f{money}"
+  - "<np>"
+  - "<np><center>&7Escribe &c{cancel} &7para cancelar la &fretiro de bóveda"
+  - "<np><center>&7Por favor escriba el número para el &fmonto de retiro {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  deposit_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cCancelado exitosamente {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  withdraw_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cCancelado exitosamente {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  deposit_exceed:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cEstás depositando demasiado dinero {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  deposit_notenough:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cNo tienes suficiente dinero para depositar. {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  withdraw_notenough:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cTu bóveda no tiene suficiente dinero para retirar. {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  rename_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<center>&fCambiar el nombre de la &bbóveda {id} {edit}"
+  - "<np>"
+  - "<np><center>&8[&r{name}&8]"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  renaming_vault:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&7Escribe &c{cancel} &7para cancelar el &fcambio de nombre de bóveda"
+  - "<np><center>&7Por favor escriba cualquier cosa para el &fnombre de la bóveda {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  rename_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cCancelado exitosamente {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  success_unlock:
+  - "<title>&bVault Desbloqueado &8&l[&f{id}&8&l]<subtitle>&7Felicidades {done}"
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&fDesbloqueo exitoso de &fID de bóveda #&f{id} {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  disorder_unlock:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cDebes desbloquear la bóveda en orden {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  insufficient_money:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cNecesitas ${money} dinero para hacer esto !  {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  no_permission:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cNo tienes el permiso &8[&f{perm}&8] &cPara usar esto {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  not_permitted:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cNo puedes hacer eso en esta &bbóveda {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  config_reload:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&bRecarga exitosamente la configuración {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  edit_icon:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&fEditar &bicono &fcon éxito &8[&r{icon}&8] {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  no_target:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cDestino &8[&r{target}&8] &cno encontrado !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  no_owner:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cPropietario &8[&r{target}&8] &cFuera de linea !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  not_available:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cNo puedes abrir la bóveda &f#&f{id} &c!! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  success_load:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&bTu bóveda ha sido cargada exitosamente !! {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  please_wait:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cPor favor, espere a que los datos de la bóveda sigan cargando !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  item-blacklisted:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cNo puedes poner ese objeto en la bóveda !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  
+  open-place:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cPor favor, no abra la bóveda en las escaleras cercanas, trampilla, alfombra y lilypad !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  
+  worldguard-open:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cNo se puede abrir la bóveda dentro de esta región. !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+
+  must_number:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cLa entrada debe ser un número !! {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  
+  vault_given:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&b{target} &frecibido {amount} de &fbóveda {done}"
+  - "<center><np>&b{target} &factualmente tiene {current} &fBóvedas {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_set:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center><np>&b{target} &fcantidad de bóveda establecida en {current} &fBóvedas {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_purified:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center>&b{target} &fbóveda [name,icon,description] ha sido purificado {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  vault_linked:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center><np>&fInventario vinculado a Bóveda &b#{id} {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_unlinked:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center><np>&fInventario no vinculado desde Bóveda &b#{id} {done}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_autosell_on:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<center><np>&fBóveda &b#{id} Venta automática &aACTIVADO {done}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  vault_autosell_off:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center><np>&fBóveda &b#{id} Venta automática &cDESACTIVADA {done}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  
+  
+  edited_line:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<center>&fEditar correctamente la &blinea {line} &fdesde &bBóveda {id} {edit}"
+  - "<np>"
+  - "<np><center>&8[&r{content}&8]"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  edit_line:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<np><center>&7Escribe &c{cancel} &7para cancelar la  &fedición de línea"
+  - "<np><center>&7Por favor escriba cualquier cosa para la &fLínea {line} {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  edit_canceled:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&cCancelado exitosamente {not}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  move_line:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<center>&fMover exitosamente la &blinea {cline} &fa &bLínea {line} {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  swap_line:
+  - "<np>{plusline}"
+  - "<np>"
+  - "<center>&fCambio exitoso de &blínea {cline} &fen &blínea {line} {edit}"
+  - "<np>"
+  - "<np>{plusline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  remove_line:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&bLínea &feliminada con éxito {line} {edit}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  inventory-notloaded:
+  - "<np>{errline}"
+  - "<np>"
+  - "<center>&fNo se puede abrir esta bóveda, tal vez porque es 1.13 bóveda ? {edit}"
+  - "<np>"
+  - "<np>{errline}"
+  - "<sound>ENTITY_VILLAGER_NO"
+  help_header:
+  - "<np>&8&l[&7&m-----&8&m===&6&m--&8&m===&f&l[ {prefix} &f&l]&8&m===&6&m--&8&m===&7&m-----&8&l]"
+  help_message:
+  - "<np>&b/mvp vault <hover:&fAbrir el menú de bóveda"
+  - "<np>&b/mvp vault &7[&aPlayer&7] <hover:&fAbrir otra bóveda"
+  - "<np>&b/mvp vault &7[&aPlayer&7] &7[&aID&7] <hover:&fAbrir otra bóveda"
+  - "<np>&b/mvp give &7[&aPlayer&7] &7[&aamount&7] <hover:&fDar bóveda al jugador."
+  - "<np>&b/mvp set &7[&aPlayer&7] &7[&aamount&7] <hover:&fConjunto de bóveda de jugador propia."
+  - "<np>&b/mvp convert &7[&aType&7] <hover:&fConvertir a Database [Type: SQLite,MySQL,YML]"
+  - "<np>&b/mvp purify &7[&aPlayer&7] <hover:&fPurifica las bóvedas de los jugadores para restablecer su título e icono."
+  - "<np>&b/mvp purifyall <hover:&fPurifica todas las bóvedas de jugadores para restablecer su título e icono."
+  - "<np>&b/mvp reload <hover:&frecargar el plugin"
+  help_decoration:
+  - "<title>{nojsonprefix}<subtitle>&7mostrando la página de ayuda {page}"
+  - "<sound>BLOCK_PISTON_EXTEND"
+  help_footer:
+  - "<np>&8&l[&7&m-----&8&m===&6&m---&8&m=&f&l[ &ePagina de ayuda {page} / {maxpage} &f&l]&8&m=&6&m---&8&m===&7&m-----&8&l]"
+  help_next:
+  - "<np><json>&e/mvp help &a{nextpage}@CR:/mvp help {nextpage}@H:&7Haga clic para ir a la página siguiente</json> &7- para ver la página siguiente"
+  help_prev:
+  - "<np><json>&e/mvp help &a{prevpage}@CR:/mvp help {prevpage}@H:&7Haga clic para ir a la página anterior</json> &7- para ver la página anterior"
+  unknown_command:
+  - "<subtitle>&e&lPor favor, vea cómo usar este comando."
+  auto_sell:
+  - "<np>{doneline}"
+  - "<np>"
+  - "<np><center>&b&lAuto Venta {plane}"
+  - "<np><center>&6Total: &f${total}"
+  - "<np>"
+  - "<np>{doneline}"
+  - "<sound>ENTITY_VILLAGER_YES"
+  

@@ -1,0 +1,27 @@
+worth:
+  '*': 0
+  # use * to set all material price
+  # with this * vault will able to sell all item in the vault
+  wool:
+   '*': 20
+   # ^ here set all color of wool to have $20
+   '0': 30
+   # ^ then set white color of wool [wool:0] to have $30
+   # then all color of wool will have $20
+   # but white wool will have $30
+  # above is first way to do that
+  # we have second way we call it modern way
+  # wool: 20
+  # ^ set all wool price to 20
+  # white_wool: 30
+  # ^ set only white wool price to 30
+  log: 2.0
+  wood: 0.50
+  emerald: 120
+  diamond: 100
+  gold_ingot: 20
+  iron_ingot: 10
+  coal: 4  
+  redstone: 3
+  wheat: 2
+  bread: 12

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="E:/Minecraft/PluginTes - Copy/plugins/Vault.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enrico/Downloads/worldedit-bukkit-7.0.0-beta-05.jar"/>
+	<classpathentry kind="lib" path="E:/Minecraft/PluginTes - Copy/plugins/worldguard-6.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enrico/Downloads/worldguard-legacy-7.0.0-beta-03.jar"/>
+	<classpathentry kind="lib" path="E:/Minecraft/PluginTes - Copy/plugins/worldedit-bukkit-6.1.7.2.jar"/>
+	<classpathentry kind="lib" path="E:/Minecraft/PlayerPoints.jar"/>
+	<classpathentry kind="lib" path="E:/Minecraft/worldguard-legacy-7.0.0-beta01.jar"/>
+	<classpathentry kind="lib" path="E:/Minecraft/PluginTes - Copy/Spigot114.jar"/>
+	<classpathentry kind="lib" path="E:/Minecraft/PluginTes - Copy/plugins/PlaceholderAPI-2.10.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,62 @@
+name: MoreVaultPlus
+author: Onenrico
+version: 3.9.3l
+description: Virtualize Your Chest !
+main: me.onenrico.morevaultplus.main.Core
+softdepend: [CMI, Vault, PlaceholderAPI, WorldEdit, WorldGuard, MoreVault, PlayerPoints,Essentials,PermissionsEx,UltraPermissions]
+loadbefore: [WorldGuard]
+api-version: 1.13
+commands:
+  morevaultplus:
+    description: The main command of morevaultplus plugin
+    aliases: [mvp, morevault]
+
+permissions:
+  morevaultplus.admin:
+    description: Gives access to all admin commands
+    default: op
+    children:
+      morevaultplus.open.*: true
+      morevaultplus.create.sign: true
+      morevaultplus.reload: true
+      morevaultplus.vault.*: true
+      morevaultplus.purify: true
+      morevaultplus.convert: true
+  morevaultplus.vault.*:
+    description: Gives access to all vault management commands
+    default: op
+    children:
+      morevaultplus.vault.give: true
+      morevaultplus.vault.set: true
+  morevaultplus.open.*:
+    description: Gives access to all open commands
+    default: op
+    children:
+      morevaultplus.open: true
+      morevaultplus.open.other: true
+      morevaultplus.open.bypass: true
+  morevaultplus.user:
+    description: Gives access to all user commands
+    children:
+      morevaultplus.open: true
+      morevaultplus.get.device: true
+      morevaultplus.use.device: true
+      morevaultplus.use.sign: true
+      morevaultplus.use.enderchest: true
+      morevaultplus.link.vault: true
+  morevaultplus.change.all:
+    description: Gives access to change vault thing
+    children:
+      morevaultplus.change.name: true
+      morevaultplus.change.description: true
+      morevaultplus.change.icon: true
+  morevaultplus.maxvault.*:
+    description: Gives access to 1000 unlockable vaults
+    default: op
+    children:
+      morevaultplus.maxvault.1000: true
+  morevaultplus.minvault.*:
+    description: Gives access to 1000 unlocked vaults
+    default: op
+    children:
+      morevaultplus.minvault.1000: true

@@ -1,0 +1,492 @@
+# 
+# Option List:
+# <center> : Center The Message on that line
+# <np> : Disable prefix on that line
+# <title> : send title to player
+# <subtitle> : send subtitle to player
+# <action> : send actionbar to player
+# <sound> : send sound to player
+# use <title>Text<subtitle>text : to send title and subtitle at same time
+# 
+# Custom Placeholder Can be Used for Text Line hologram too
+# Use curly bracket { } to use placeholder in Text Line
+# Example: {heart} will be replace by defined placeholder
+# Don't forget to encode as UTF-8 
+# Below is pre-made plaeholder , you can make as many as you want XD
+
+custom-placeholder:
+  newmoneybar: <bar>bars=15<>value={moneyinside}<>maxvalue={maxmoney}<>symbol=○<>fill=&6<>empty=&f</bar>
+  newexpbar: <bar>bars=15<>value={expinside}<>maxvalue={maxexp}<>symbol=●<>fill=&6<>empty=&f</bar>
+  newspacebar: <bar>bars=15<>value={used}<>maxvalue={space}<>symbol=▧<>fill=&6<>empty=&f</bar>
+  newtotalbar: <bar>bars=15<>value={total}<>maxvalue={space64}<>symbol=▩<>fill=&6<>empty=&f</bar>
+  doneline: '&f&m+--------------------------------------------------------------+'
+  errline: '&8&m+--------------------------------------------------------------+'
+  plusline: '&7&m+--------------------------------------------------------------+'
+  done: '&8&l[&f✔&8&l]'
+  not: '&8&l[&c✘&8&l]'
+  edit: '&8&l[&f✎&8&l]'
+  peace: ✌
+  heart: ❤
+  cloud: ☁
+  poison: ☠
+  star: ★
+  x: █
+  x/: ▌
+  x\: ▐
+  rarrow: ►
+  larrow: ◀
+  diamond: ◇
+  melody: ♫
+  crown: ♚
+  plane: ✈
+  snowman: ☃
+  snow: ❆
+  sword: ⚔
+  health: ✚
+  checklist: ✔
+  cross: ✘
+  copyright: ©
+  tm: ™
+  empty: ''
+random-placeholder:
+  red:
+  - '&c'
+  - '&4'
+  green:
+  - '&a'
+  - '&2'
+  blue:
+  - '&b'
+  - '&3'
+  white:
+  - '&f'
+  - '&7'
+  yellow:
+  - '&e'
+  - '&6'
+messages:
+  gui_click:
+  - <sound>BLOCK_PISTON_EXTEND
+  main_menu_open:
+  - <sound>BLOCK_CHEST_OPEN
+  vault_open:
+  - <sound>BLOCK_CHEST_OPEN
+  device_get:
+  - <title>&bУстройство получено &8&l[&f{id}&8&l]<subtitle>&7Теперь можно открывать
+    хранилище через него {done}
+  - <np>{doneline}
+  - <np>
+  - '<center>&fУспешно получено устройство &fХранилища #&f{id} {done}'
+  - <np>
+  - <np>{doneline}
+  - <sound>ENTITY_VILLAGER_YES
+  exp_deposited_vault:
+  - <np>{plusline}
+  - <np>
+  - <np><center>&fОпыт успешно переведен на счет &bХранилища {id} {edit}
+  - <np><center>&b+&f{exp} {edit}
+  - <np>
+  - '<np><center>&bТекущий опыт в хранилище: &f{amount} {done}'
+  - <np>
+  - <np>{plusline}
+  - <sound>ENTITY_VILLAGER_YES
+  exp_withdrawed_vault:
+  - <np>{plusline}
+  - <np>
+  - <np><center>&fОпыт успешно снят с &bХранилища {id} {edit}
+  - <np><center>&c-&f{exp} {edit}
+  - <np>
+  - '<np><center>&bТекущий опыт в хранилище: &f{amount} {done}'
+  - <np>
+  - <np>{plusline}
+  - <sound>ENTITY_VILLAGER_YES
+  exp_deposit_vault:
+  - <np>{plusline}
+  - <np>
+  - '<np><center>&bМаксимальный опыт в хранилище&f: &f{max-exp-amount}'
+  - <np>
+  - '<np><center>&fОпыт в хранилище&f: &f{amount}'
+  - '<np><center>&fВаш опыт&f: &f{exp}'
+  - <np>
+  - <np><center>&7Введите &c{cancel} &7для отмены &fДепозита
+  - <np><center>&7Пожалуйста введите &fРазмер Депозита {edit}
+  - <np>
+  - <np>{plusline}
+  - <sound>BLOCK_PISTON_EXTEND
+  exp_withdraw_vault:
+  - <np>{plusline}
+  - <np>
+  - '<np><center>&bМаксимально опыт в хранилище&f: &f{max-exp-amount}'
+  - <np>
+  - '<np><center>&fОпыт в хранилище&f: &f{amount}'
+  - '<np><center>&fВаш опыт&f: &f{exp}'
+  - <np>
+  - <np><center>&7Введите &c{cancel} &7для отмены &fВывода с Хранилища
+  - <np><center>&7Пожалуйста введите значение &fВывода опыта с Хранилища {edit}
+  - <np>
+  - <np>{plusline}
+  - <sound>BLOCK_PISTON_EXTEND
+  exp_deposit_canceled:
+  - <np>{errline}
+  - <np>
+  - <center>&cУспешно отменено {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_YES
+  exp_withdraw_canceled:
+  - <np>{errline}
+  - <np>
+  - <center>&cУспешно отменено {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_YES
+  exp_deposit_exceed:
+  - <np>{errline}
+  - <np>
+  - <center>&cВы вносите слишком большой депозит {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  exp_deposit_notenough:
+  - <np>{errline}
+  - <np>
+  - <center>&cУ вас недостаточно опыта для данного депозита {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  exp_withdraw_notenough:
+  - <np>{errline}
+  - <np>
+  - <center>&cВ вашем хранилище недостаточно опыта для данного вывода {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  deposited_vault:
+  - <np>{plusline}
+  - <np>
+  - <np><center>&fДепозит успешно внесен в &bХранилище {id} {edit}
+  - <np><center>&b+&f${money} {edit}
+  - <np>
+  - '<np><center>&bТекущий баланс хранилища: &f${amount} {done}'
+  - <np>
+  - <np>{plusline}
+  - <sound>ENTITY_VILLAGER_YES
+  withdrawed_vault:
+  - <np>{plusline}
+  - <np>
+  - <np><center>&fУспешный вывод средств с &bХранилища {id} {edit}
+  - <np><center>&c-&f${money} {edit}
+  - <np>
+  - '<np><center>&bТекущий баланс хранилища: &f${amount} {done}'
+  - <np>
+  - <np>{plusline}
+  - <sound>ENTITY_VILLAGER_YES
+  deposit_vault:
+  - <np>{plusline}
+  - <np>
+  - '<np><center>&bМаксимальный баланс хранилища&f: &f${max-amount}'
+  - <np>
+  - '<np><center>&fСредства в хранилище&f: &f${amount}'
+  - '<np><center>&fВаши средства&f: &f${money}'
+  - <np>
+  - <np><center>&7Введите &c{cancel} &7для отмены &fДепозита
+  - <np><center>&7Пожалуйста введите &fРазмер депозита {edit}
+  - <np>
+  - <np>{plusline}
+  - <sound>BLOCK_PISTON_EXTEND
+  withdraw_vault:
+  - <np>{plusline}
+  - <np>
+  - '<np><center>&bМаксимальный баланс хранилища&f: &f${max-amount}'
+  - <np>
+  - '<np><center>&fСредства в хранилище&f: &f${amount}'
+  - '<np><center>&fВаши средства&f: &f${money}'
+  - <np>
+  - <np><center>&7Введите &c{cancel} &7для отмены &fВывода с хранилища
+  - <np><center>&7Пожалуйста введите &fСумму вывода {edit}
+  - <np>
+  - <np>{plusline}
+  - <sound>BLOCK_PISTON_EXTEND
+  deposit_canceled:
+  - <np>{errline}
+  - <np>
+  - <center>&cУспешно отменено {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_YES
+  withdraw_canceled:
+  - <np>{errline}
+  - <np>
+  - <center>&cУспешно отменено {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_YES
+  deposit_exceed:
+  - <np>{errline}
+  - <np>
+  - <center>&cВы делаете слишком большой депозит {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  deposit_notenough:
+  - <np>{errline}
+  - <np>
+  - <center>&cУ вас недостаточно средств для данного депозита {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  withdraw_notenough:
+  - <np>{errline}
+  - <np>
+  - <center>&cВ хранилище недостаточно средств для данного вывода {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  rename_vault:
+  - <np>{plusline}
+  - <np>
+  - <center>&fУспешное переименование &bХранилища {id} {edit}
+  - <np>
+  - <np><center>&8[&r{name}&8]
+  - <np>
+  - <np>{plusline}
+  - <sound>ENTITY_VILLAGER_YES
+  renaming_vault:
+  - <np>{plusline}
+  - <np>
+  - <np><center>&7Введите &c{cancel} &7для отмены &fПереименования хранилища
+  - <np><center>&7Пожалуйста введите новое &fИмя хранилища {edit}
+  - <np>
+  - <np>{plusline}
+  - <sound>BLOCK_PISTON_EXTEND
+  rename_canceled:
+  - <np>{errline}
+  - <np>
+  - <center>&cУспешно отменено {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_YES
+  success_unlock:
+  - <title>&bХранилище разблокировано &8&l[&f{id}&8&l]<subtitle>&7Поздравляем {done}
+  - <np>{doneline}
+  - <np>
+  - '<center>&fУспешное раблокирование &fХранилища #&f{id} {done}'
+  - <np>
+  - <np>{doneline}
+  - <sound>BLOCK_PISTON_EXTEND
+  disorder_unlock:
+  - <np>{errline}
+  - <np>
+  - <center>&cВы должны разблокировать хранилища по порядку {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  insufficient_money:
+  - <np>{errline}
+  - <np>
+  - <center>&cВам нужно ${money}, чтобы сделать это!  {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  no_permission:
+  - <np>{errline}
+  - <np>
+  - <center>&cУ вас недостаточно прав &8[&f{perm}&8] &cДля использования этого {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  not_permitted:
+  - <np>{errline}
+  - <np>
+  - <center>&cВы не можете сделать это с этим &bХранилищем {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  config_reload:
+  - <np>{doneline}
+  - <np>
+  - <center>&bКонфигурация успешно перезагружена {done}
+  - <np>
+  - <np>{doneline}
+  - <sound>ENTITY_VILLAGER_YES
+  edit_icon:
+  - <np>{doneline}
+  - <np>
+  - <center>&fУспешно установлена &bИконка &8[&r{icon}&8] {done}
+  - <np>
+  - <np>{doneline}
+  - <sound>ENTITY_VILLAGER_YES
+  no_target:
+  - <np>{errline}
+  - <np>
+  - <center>&cЦель &8[&r{target}&8] &cНе найдена! {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  no_owner:
+  - <np>{errline}
+  - <np>
+  - <center>&cВладелец &8[&r{target}&8] &cНе в сети! {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  not_available:
+  - <np>{errline}
+  - <np>
+  - <center>&cВы не можете открыть хранилище &f#&f{id} &c! {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_YES
+  success_load:
+  - <np>{doneline}
+  - <np>
+  - <center>&bВаше хранилище успешно загружено! {done}
+  - <np>
+  - <np>{doneline}
+  - <sound>ENTITY_VILLAGER_YES
+  please_wait:
+  - <np>{errline}
+  - <np>
+  - <center>&cПожалуйста, подождите, данные хранилища все еще загружаются! {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  item-blacklisted:
+  - <np>{errline}
+  - <np>
+  - <center>&cВы не можете положить этот предмет в хранилище! {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  open-place:
+  - <np>{errline}
+  - <np>
+  - <center>&cПожалуйста, не открывайте хранилище рядом с лестницей, люком, ковром
+    и кувшинкой! {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  worldguard-open:
+  - <np>{errline}
+  - <np>
+  - <center>&cВы не можете открыть хранилище внутри этого региона! {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  must_number:
+  - <np>{errline}
+  - <np>
+  - <center>&cВводимые данные должны быть числом! {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  vault_given:
+  - <np>{doneline}
+  - <np>
+  - <center>&b{target} &fполучено {amount} &fХранилищ {done}
+  - <center><np>&b{target} &fв настоящее время есть {current} &fХранилищ {done}
+  - <np>
+  - <np>{doneline}
+  - <sound>ENTITY_VILLAGER_YES
+  vault_set:
+  - <np>{doneline}
+  - <np>
+  - <center><np>&b{target} &fколичсетво установлено на {current} &fХранилищ {done}
+  - <np>
+  - <np>{doneline}
+  - <sound>ENTITY_VILLAGER_YES
+  vault_purified:
+  - <np>{doneline}
+  - <np>
+  - <center>&b{target} &fхранилище [имя,иконка,описание] было очищено {done}
+  - <np>
+  - <np>{doneline}
+  - <sound>ENTITY_VILLAGER_YES
+  vault_linked:
+  - <np>{doneline}
+  - <np>
+  - <center><np>&fИнвентарь теперь связан с хранилищем &b#{id} {done}
+  - <np>
+  - <np>{doneline}
+  - <sound>ENTITY_VILLAGER_YES
+  vault_unlinked:
+  - <np>{errline}
+  - <np>
+  - <center><np>&fИнвентарь больше не связан с хранилищем &b#{id} {done}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_YES
+  edited_line:
+  - <np>{plusline}
+  - <np>
+  - <center>&fУспешное редактирование &bСтроки {line} &fв &bХранилище {id} {edit}
+  - <np>
+  - <np><center>&8[&r{content}&8]
+  - <np>
+  - <np>{plusline}
+  - <sound>ENTITY_VILLAGER_YES
+  edit_line:
+  - <np>{plusline}
+  - <np>
+  - <np><center>&7Введите &c{cancel} &7для отмены &fРедактирования строки
+  - <np><center>&7Пожалуйста введите &fНовую строку {line} {edit}
+  - <np>
+  - <np>{plusline}
+  - <sound>BLOCK_PISTON_EXTEND
+  edit_canceled:
+  - <np>{errline}
+  - <np>
+  - <center>&cУспешно отменено {not}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_YES
+  move_line:
+  - <np>{plusline}
+  - <np>
+  - <center>&fУспешное перемещение &bСтроки {cline} &fв &bСтроку {line} {edit}
+  - <np>
+  - <np>{plusline}
+  - <sound>ENTITY_VILLAGER_YES
+  swap_line:
+  - <np>{plusline}
+  - <np>
+  - <center>&fУспешная замена &bСтроки {cline} &fи &bСтроки {line} {edit}
+  - <np>
+  - <np>{plusline}
+  - <sound>ENTITY_VILLAGER_YES
+  remove_line:
+  - <np>{errline}
+  - <np>
+  - <center>&fУспешное удаление &bСтроки {line} {edit}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_YES
+  inventory-notloaded:
+  - <np>{errline}
+  - <np>
+  - <center>&fНе удается открыть это хранилище, может быть, потому что это хранилище
+    1.13? {edit}
+  - <np>
+  - <np>{errline}
+  - <sound>ENTITY_VILLAGER_NO
+  help_message:
+  - <np>&b/mvp vault <hover:&fОткрыть меню Хранилища
+  - <np>&b/mvp vault &7[&aPlayer&7] <hover:&fОткрыть Хранилище другого игрока
+  - <np>&b/mvp vault &7[&aPlayer&7] &7[&aID&7] <hover:&fОткрыть Хранилище другого игрока
+  - <np>&b/mvp give &7[&aPlayer&7] &7[&aamount&7] <hover:&fВыдать Хранилище игроку
+  - <np>&b/mvp set &7[&aPlayer&7] &7[&aamount&7] <hover:&fУстановить собственное хранилище игрока
+  - '<np>&b/mvp convert &7[&aType&7] <hover:&fКонвертация базы данных [Тип: SQLite,MySQL,YML]'
+  - <np>&b/mvp purify &7[&aPlayer&7] <hover:&fОчистить хранилища игрока, чтобы сбросить его название и значок
+  - <np>&b/mvp purifyall <hover:&fОчистить все хранилища игрока, чтобы сбросить его название и значок
+  - <np>&b/mvp reload <hover:&fПерезагрузить плагин
+  help_header:
+  - <np>&8&l[&7&m-----&8&m===&6&m--&8&m===&f&l[ {prefix} &f&l]&8&m===&6&m--&8&m===&7&m-----&8&l]
+  help_footer:
+  - <np>&8&l[&7&m-----&8&m===&6&m---&8&m=&f&l[ &eСтраница помощи {page} / {maxpage} &f&l]&8&m=&6&m---&8&m===&7&m-----&8&l]
+  help_next:
+  - <np><json>&e/mvp help &a{nextpage}@CR:/mvp help {nextpage}@H:&7Нажмите, чтобы перейти на следующую страницу</json> &7- увидеть следующую страницу
+  help_decoration:
+  - <title>{nojsonprefix}<subtitle>&7отображение страницы помощи {page}
+  - <sound>BLOCK_PISTON_EXTEND
+  help_prev:
+  - <np><json>&e/mvp help &a{prevpage}@CR:/mvp help {prevpage}@H:&7Нажмите, чтобы перейти на предыдущую страницу</json> &7- увидеть предыдущую страницу
